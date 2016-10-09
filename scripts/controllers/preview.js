@@ -200,7 +200,7 @@ SwaggerEditor.controller('PreviewCtrl', function PreviewCtrl(Storage, Builder,
       return false;
     }
 
-    if (operationName === 'parameters') {
+    if (operationName === 'parameters' || operationName === 'invoking') {
       return false;
     }
 

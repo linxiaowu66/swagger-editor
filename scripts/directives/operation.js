@@ -45,6 +45,21 @@ SwaggerEditor.directive('swaggerOperation', function(defaults) {
         return operationParameters.concat(pathParameters)
           .map(setParameterSchema);
       };
+      /*
+       * Gets available invoking relation
+       *
+       * @returns {array} - array of parameters
+      */
+      $scope.getInvoking = function getCallbackBy() {
+        var hasInvoking = _.isObject($scope.operation.invoking);
+
+        // if there is no operation and path parameter return empty array
+        if (!hasInvoking) {
+          return undefined;
+        }
+
+        return $scope.operation.invoking;
+      };
 
       /**
        * Sets the schema object for a parameter even if it doesn't have schema
@@ -122,6 +137,12 @@ SwaggerEditor.directive('swaggerOperation', function(defaults) {
         return parameters.some(function(param) {
           return param.description;
         });
+      };
+      $scope.hasInvokingWithDescription = function(parameters) {
+        if (parameters.description !== undefined) {
+          return true;
+        }
+        return false;
       };
     }
   };

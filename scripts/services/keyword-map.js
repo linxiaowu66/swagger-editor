@@ -73,6 +73,12 @@ SwaggerEditor.service('KeywordMap', function KeywordMap(defaults) {
     url: String
   };
 
+  var invokingInfo = {
+    description: String,
+    file: String,
+    location: String
+  };
+
   var mimeTypes = [
     'text/plain',
     'text/html',
@@ -154,7 +160,8 @@ SwaggerEditor.service('KeywordMap', function KeywordMap(defaults) {
     responses: {
       '.': response
     },
-    tags: [String]
+    tags: [String],
+    invoking: invokingInfo
   };
 
   var securityDefinition = {

@@ -4,7 +4,7 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config');
 var open = require('open');
-var IP = '127.0.0.1';
+var IP = '0.0.0.0';
 var argv = require('minimist')(process.argv.slice(2));
 
 /**
@@ -35,7 +35,7 @@ function startServer(port, cb) {
 
 // if this file was triggered directly, launch the server
 if (require.main === module) {
-  var PORT = process.env.PORT || 8080;
+  var PORT = process.env.PORT || 8081;
 
   startServer(PORT, function(err) {
     if (err) {

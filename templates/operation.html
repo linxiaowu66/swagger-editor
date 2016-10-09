@@ -87,6 +87,27 @@
         </table>
       </div>
     </section>
+    <section class="parameters" ng-if="getInvoking()">
+      <h4>Invoking</h4>
+      <div>
+        <table class="params">
+          <thead>
+            <tr>
+              <th ng-if="hasInvokingWithDescription(getInvoking())">Description</th>
+              <th>File</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td ng-if="hasInvokingWithDescription(getInvoking())">{{getInvoking().description}}</td>
+              <td>{{getInvoking().file}}</td>
+              <td>{{getInvoking().location}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     <section class="responses" ng-if="operation">
       <h4>Responses</h4>
