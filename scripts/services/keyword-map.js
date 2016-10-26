@@ -75,6 +75,8 @@ SwaggerEditor.service('KeywordMap', function KeywordMap(defaults) {
 
   var invokingInfo = {
     description: String,
+    project: String,
+    version: String,
     file: String,
     location: String
   };

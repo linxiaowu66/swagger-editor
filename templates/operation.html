@@ -93,16 +93,20 @@
         <table class="params">
           <thead>
             <tr>
-              <th ng-if="hasInvokingWithDescription(getInvoking())">Description</th>
+              <th>Project</th>
               <th>File</th>
+              <th>Version</th>
               <th>Location</th>
+              <th ng-if="hasInvokingWithDescription(getInvoking())">Description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td ng-if="hasInvokingWithDescription(getInvoking())">{{getInvoking().description}}</td>
+              <td>{{getInvoking().project}}</td>
               <td>{{getInvoking().file}}</td>
+              <td>{{getInvoking().version}}</td>
               <td>{{getInvoking().location}}</td>
+              <td ng-if="hasInvokingWithDescription(getInvoking())">{{getInvoking().description}}</td>
             </tr>
           </tbody>
         </table>
